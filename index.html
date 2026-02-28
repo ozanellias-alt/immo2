@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hirschfeld Immobilien – Verkauf · Vermietung · Wertermittlung</title>
+  <meta name="description" content="Hirschfeld Immobilien: seriöse Immobilienvermittlung. Verkauf, Vermietung, Wertermittlung – diskret, transparent und regional." />
+
+  <!-- Seriöse Schriftkombination (passt zum Logo-Look) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Deine Farbwelt */
+      --green: #1F3A2E;  /* Moosgrün */
+      --gold:  #C6A65B;  /* Gold */
+      --bg:    #F4EFE6;  /* Ivory */
+      --bg2:   #E8E0D2;  /* edleres Beige */
+
+      --card:  #ffffff;
+      --ink:   #111827;
+      --muted: #4b5563;
+      --line:  rgba(31,58,46,.16);
+
+      --shadow: 0 18px 55px rgba(17,24,39,.10);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--ink);
+      background:
+        radial-gradient(900px 650px at 10% -10%, rgba(31,58,46,.10), transparent 60%),
+        radial-gradient(900px 650px at 92% 10%, rgba(198,166,91,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      line-height:1.65;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px;}
+    .sep{height:1px; background:var(--line); margin:18px 0;}
+
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px) saturate(160%);
+      background: rgba(244,239,230,.82);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:14px 0; position:relative;
+    }
+
+    /* Logo */
+    .brand{
+      display:flex; align-items:center; gap:14px;
+      text-decoration:none;
+      min-width: 320px;
+    }
+    .brand img{
+      height:40px; width:auto; display:block;
+    }
+
+    nav ul{list-style:none; margin:0; padding:0; display:flex; gap:6px; align-items:center;}
+    nav a{
+      text-decoration:none;
+      padding:10px 12px;
+      border-radius:14px;
+      color: rgba(17,24,39,.72);
+      font-weight:800;
+      letter-spacing:.01em;
+    }
+    nav a:hover{background: rgba(31,58,46,.10); color:var(--ink);}
+
+    .actions{display:flex; gap:10px; align-items:center;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: var(--card);
+      box-shadow: 0 8px 28px rgba(17,24,39,.07);
+      font-weight:900;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--green), #163026);
+      color: var(--bg);
+      position:relative;
+    }
+    .btn.primary:after{
+      content:""; position:absolute; inset:-1px;
+      border-radius:14px;
+      border:1px solid rgba(198,166,91,.70);
+      pointer-events:none;
+    }
+    .btn.gold{
+      background: linear-gradient(135deg, #d1b068, var(--gold));
+      color:#111827;
+      border-color: transparent;
+    }
+    .menuBtn{display:none}
+
+    /* Hero */
+    .hero{padding:54px 0 22px;}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:24px;
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      color: rgba(17,24,39,.65);
+      font-weight:900;
+      font-size:12px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(135deg, var(--gold), var(--green));
+      box-shadow: 0 0 0 6px rgba(198,166,91,.16);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-family: Cinzel, "Times New Roman", serif;
+      font-size: clamp(36px, 4.4vw, 56px);
+      line-height:1.04;
+      letter-spacing:-.01em;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      font-weight:600;
+      max-width: 75ch;
+    }
+    .heroCtas{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;}
+    .micro{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:16px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      color: rgba(17,24,39,.62);
+      font-weight:700;
+      font-size:13px;
+    }
+    .micro b{color:var(--ink)}
+    .heroMedia{
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      min-height: 470px;
+      background:
+        linear-gradient(180deg, rgba(244,239,230,.62), rgba(244,239,230,.92)),
+        url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=75");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      flex-direction:column;
+    }
+    .heroMediaInner{
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      height:100%;
+      justify-content:space-between;
+    }
+    .heroMedia h3{
+      margin:0;
+      font-family: Cinzel, serif;
+      font-size:18px;
+    }
+    .heroMedia p{margin:0; color:var(--muted); font-weight:700}
+    .miniGrid{display:grid; gap:10px}
+    .miniCard{
+      background: rgba(255,255,255,.86);
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:14px;
+    }
+    .miniCard b{display:block}
+    .miniCard span{color:var(--muted); font-weight:700; font-size:13px}
+
+    /* Sections – Premium “Studio”-Aufbau */
+    section{padding:44px 0;}
+    .sectionGrid{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:16px;
+      align-items:start;
+    }
+    .sectionTitle{
+      position:sticky;
+      top:96px;
+      align-self:start;
+    }
+    .sectionTitle .tag{
+      display:inline-block;
+      font-weight:900;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      font-size:12px;
+      color: rgba(17,24,39,.65);
+      margin-bottom:10px;
+    }
+    .sectionTitle h2{
+      margin:0;
+      font-family: Cinzel, serif;
+      font-size: clamp(26px, 3.0vw, 38px);
+      line-height:1.12;
+      letter-spacing:-.01em;
+    }
+    .sectionTitle p{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-weight:600;
+      max-width:55ch;
+    }
+
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;}
+    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:14px;}
+
+    .feature{
+      border:1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: 0 10px 30px rgba(17,24,39,.06);
+    }
+    .icon{
+      width:44px;height:44px;border-radius:16px;
+      display:grid;place-items:center;
+      background: rgba(31,58,46,.10);
+      border:1px solid rgba(31,58,46,.18);
+      font-weight:1000;
+      color: var(--green);
+      margin-bottom:10px;
+      position:relative;
+    }
+    .icon:after{
+      content:"";
+      position:absolute; inset:-1px;
+      border-radius:16px;
+      border:1px solid rgba(198,166,91,.40);
+      pointer-events:none;
+    }
+    .feature h3{margin:0 0 6px; font-size:16px}
+    .feature p{margin:0; color:var(--muted); font-weight:600}
+
+    .service{
+      display:flex; flex-direction:column; gap:10px;
+      border:1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(17,24,39,.06);
+    }
+    .service img{width:100%; height:190px; object-fit:cover;}
+    .service .pad{padding:16px}
+    .service h3{margin:0 0 6px; font-family: Cinzel, serif;}
+    .service p{margin:0; color:var(--muted); font-weight:600}
+
+    .case{
+      border:1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(17,24,39,.06);
+      display:flex; flex-direction:column;
+    }
+    .case .img{
+      height:170px;
+      background-size:cover;
+      background-position:center;
+      border-bottom:1px solid var(--line);
+    }
+    .case .pad{padding:16px}
+    .case b{display:block}
+    .case span{color:var(--muted); font-weight:700; font-size:13px}
+
+    .ctaBand{
+      border:1px solid var(--line);
+      background: linear-gradient(135deg, rgba(31,58,46,.08), rgba(198,166,91,.10));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    details{
+      border:1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding:14px 16px;
+    }
+    summary{cursor:pointer; font-weight:900}
+    details p{margin:10px 0 0; color:var(--muted); font-weight:600}
+
+    .form label{display:block; font-weight:900; margin:10px 0 6px}
+    .form input,.form textarea,.form select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: white;
+      color: var(--ink);
+      outline:none;
+      font-family: Inter, system-ui, Arial;
+    }
+    .form textarea{min-height:120px; resize:vertical}
+    .row2{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
+    .small{color:var(--muted); font-weight:700; font-size:13px}
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:28px 0 40px;
+      color:var(--muted);
+    }
+    .footGrid{display:grid; grid-template-columns: 1.1fr .9fr .9fr; gap:14px;}
+    .footGrid a{color:var(--muted); text-decoration:none}
+    .footGrid a:hover{color:var(--ink)}
+    .copy{
+      margin-top:16px; padding-top:14px;
+      border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+
+    .float{
+      position:fixed; right:18px; bottom:18px; z-index:60;
+      display:flex; flex-direction:column; gap:10px;
+    }
+
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns:1fr}
+      .sectionGrid{grid-template-columns:1fr}
+      .sectionTitle{position:static}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      nav ul{display:none}
+      .menuBtn{display:inline-flex}
+      .nav.open nav ul{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        position:absolute;
+        left:0; right:0;
+        top:64px;
+        padding:12px;
+        background: rgba(244,239,230,.95);
+        border:1px solid var(--line);
+        border-radius: 18px;
+        gap:6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav" id="topNav">
+      <a class="brand" href="#top" aria-label="Start">
+        <!-- ✅ Hier wird dein hochgeladenes Logo genutzt -->
+        <img src="assets/logo.png" alt="Hirschfeld Immobilien Logo" />
+      </a>
+
+      <nav aria-label="Navigation">
+        <ul id="mobileMenu">
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#prozess">Prozess</a></li>
+          <li><a href="#referenzen">Referenzen</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <!-- ✅ HIER TELEFON EINTRAGEN -->
+        <a class="btn" href="tel:+490000000000">📞 Anrufen</a>
+        <a class="btn primary" href="#kontakt">Bewertung anfragen</a>
+        <button class="btn menuBtn" id="menuBtn" type="button" aria-expanded="false">☰ Menü</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="heroGrid">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span> SERIÖS · DISKRET · REGIONAL</div>
+          <h1>Immobilien verkaufen oder vermieten –<br>professionell &amp; transparent.</h1>
+          <p class="lead">
+            Hirschfeld Immobilien begleitet Eigentümer von der marktnahen Wertermittlung über die Vermarktung bis zum Abschluss –
+            mit klarer Kommunikation, hochwertiger Präsentation und strukturierter Abwicklung.
+          </p>
+
+          <div class="heroCtas">
+            <a class="btn primary" href="#kontakt">Kostenlose Erstberatung</a>
+            <a class="btn gold" href="#leistungen">Leistungen ansehen</a>
+          </div>
+
+          <div class="micro">
+            <span>✔ <b>Marktanalyse</b> statt Bauchgefühl</span>
+            <span>✔ <b>Bonitätsprüfung</b> & qualifizierte Interessenten</span>
+            <span>✔ <b>Rechtssicher</b> bis Übergabe</span>
+          </div>
+        </div>
+
+        <div class="heroMedia" aria-label="Immobilien Bild">
+          <div class="heroMediaInner">
+            <div>
+              <div class="kicker"><span class="dot"></span> PREMIUM-VERMARKTUNG</div>
+              <h3 style="margin-top:10px;">Wert erhalten. Sicher abschließen.</h3>
+              <p>Auf Wunsch diskret (Off-Market) oder öffentlich mit starker Sichtbarkeit.</p>
+            </div>
+
+            <div class="miniGrid">
+              <div class="miniCard"><b>Antwort in 24h</b><span>werktags auf Anfragen</span></div>
+              <div class="miniCard"><b>Diskrete Vermarktung</b><span>für sensible Verkäufe</span></div>
+              <div class="miniCard"><b>Transparente Schritte</b><span>Sie wissen immer, wo wir stehen</span></div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary" href="#kontakt">Termin sichern</a>
+              <!-- ✅ HIER EMAIL EINTRAGEN -->
+              <a class="btn" href="mailto:info@hirschfeld-immobilien.de">E-Mail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="sectionGrid">
+        <div class="sectionTitle">
+          <div class="tag">Leistungen</div>
+          <h2>Alles aus einer Hand –<br>klar, sauber, seriös.</h2>
+          <p>Verkauf, Vermietung und Wertermittlung – mit hochwertiger Präsentation und sauberer Abwicklung.</p>
+        </div>
+
+        <div style="display:grid; gap:14px;">
+          <div class="grid3">
+            <div class="service">
+              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=75" alt="Immobilienverkauf" />
+              <div class="pad">
+                <h3>Verkauf</h3>
+                <p>Preisstrategie, Exposé, Zielgruppenansprache, Besichtigungen, Verhandlung & Abschluss.</p>
+              </div>
+            </div>
+            <div class="service">
+              <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=75" alt="Vermietung" />
+              <div class="pad">
+                <h3>Vermietung</h3>
+                <p>Bonitätsprüfung, Mieterauswahl, Mietvertrag, Übergabe – strukturiert & rechtssicher.</p>
+              </div>
+            </div>
+            <div class="service">
+              <img src="https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?auto=format&fit=crop&w=1600&q=75" alt="Wertermittlung" />
+              <div class="pad">
+                <h3>Wertermittlung</h3>
+                <p>Marktanalyse, Objektbewertung, Chancen & Risiken – nachvollziehbar dokumentiert.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid3">
+            <div class="feature"><div class="icon">📸</div><h3>Präsentation</h3><p>Professionelle Fotos, Exposé, Portale, Besichtigungsplanung.</p></div>
+            <div class="feature"><div class="icon">🧾</div><h3>Unterlagen-Check</h3><p>Strukturiert, vollständig, schnell – damit Interessenten entscheiden können.</p></div>
+            <div class="feature"><div class="icon">🤝</div><h3>Verhandlung</h3><p>Seriös, sachlich, zielorientiert – mit klaren Entscheidungsvorlagen.</p></div>
+          </div>
+
+          <div class="ctaBand">
+            <div>
+              <div class="kicker"><span class="dot"></span> Kostenfreie Ersteinschätzung</div>
+              <h3 style="margin:10px 0 0; font-family:Cinzel,serif;">In 15 Minuten Klarheit: Verkauf oder Vermietung?</h3>
+              <div class="small">Telefon: +49 000 0000000 · E-Mail: info@hirschfeld-immobilien.de</div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary" href="#kontakt">Jetzt anfragen</a>
+              <a class="btn gold" href="tel:+490000000000">Anrufen</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prozess">
+    <div class="wrap">
+      <div class="sectionGrid">
+        <div class="sectionTitle">
+          <div class="tag">Prozess</div>
+          <h2>Ein klarer Ablauf –<br>damit es stressfrei läuft.</h2>
+          <p>Transparente Schritte, klare Zuständigkeiten, regelmäßige Updates.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="feature"><div class="icon">1</div><h3>Erstgespräch</h3><p>Ziele, Objekt, Zeitrahmen – unverbindlich.</p></div>
+          <div class="feature"><div class="icon">2</div><h3>Strategie</h3><p>Bewertung, Zielgruppe, Vermarktungsweg (auch diskret möglich).</p></div>
+          <div class="feature"><div class="icon">3</div><h3>Vermarktung</h3><p>Exposé, Portale/Netzwerk, Besichtigungen, Interessentenmanagement.</p></div>
+          <div class="feature"><div class="icon">4</div><h3>Prüfung</h3><p>Bonität/Finanzierung, Dokumente, Auswahl qualifizierter Kandidaten.</p></div>
+          <div class="feature"><div class="icon">5</div><h3>Abschluss</h3><p>Verhandlung, Vertrag/Notar, Übergabeprotokoll.</p></div>
+          <div class="feature"><div class="icon">✓</div><h3>Nachbetreuung</h3><p>Offene Punkte klären, sauberer Abschluss.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="referenzen">
+    <div class="wrap">
+      <div class="sectionGrid">
+        <div class="sectionTitle">
+          <div class="tag">Referenzen</div>
+          <h2>Ausgewählte Fälle</h2>
+          <p>Hier später echte Objekte/Projekte eintragen (mit echten Bildern).</p>
+        </div>
+
+        <div class="grid3">
+          <div class="case">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=75');"></div>
+            <div class="pad"><b>Verkauf Einfamilienhaus</b><span>Preisstrategie · Exposé · Abschluss</span></div>
+          </div>
+          <div class="case">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=75');"></div>
+            <div class="pad"><b>Vermietung Wohnung</b><span>Bonität · Vertrag · Übergabe</span></div>
+          </div>
+          <div class="case">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1600&q=75');"></div>
+            <div class="pad"><b>Wertermittlung</b><span>Marktanalyse · Empfehlung</span></div>
+          </div>
+        </div>
+
+        <div class="ctaBand" style="margin-top:14px;">
+          <div>
+            <div class="kicker"><span class="dot"></span> Diskret möglich</div>
+            <h3 style="margin:10px 0 0; font-family:Cinzel,serif;">Off-Market Vermarktung auf Wunsch</h3>
+            <div class="small">Ideal bei sensiblen Verkäufen – ohne breite Veröffentlichung.</div>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="#kontakt">Diskret anfragen</a>
+            <a class="btn gold" href="#leistungen">Leistungen</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sectionGrid">
+        <div class="sectionTitle">
+          <div class="tag">FAQ</div>
+          <h2>Häufige Fragen</h2>
+          <p>Kurz, seriös, verständlich.</p>
+        </div>
+
+        <div class="grid2">
+          <details><summary>Was kostet ein Makler?</summary><p>Hängt von Objekt, Leistungspaket und Region ab. Wir klären das transparent in der Erstberatung.</p></details>
+          <details><summary>Wie schnell kann verkauft/vermietet werden?</summary><p>Abhängig von Lage, Preis und Zustand. Professionelle Präsentation verkürzt oft die Vermarktungszeit.</p></details>
+          <details><summary>Kann die Vermarktung diskret erfolgen?</summary><p>Ja – auf Wunsch Off-Market über Netzwerk.</p></details>
+          <details><summary>Welche Unterlagen werden benötigt?</summary><p>Typisch: Grundbuch, Energieausweis, Grundrisse, Wohnflächen, WEG-Unterlagen. Wir helfen beim Zusammenstellen.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="sectionGrid">
+        <div class="sectionTitle">
+          <div class="tag">Kontakt</div>
+          <h2>Wir melden uns schnell zurück.</h2>
+          <p>Objektart, Ort, grobe Eckdaten und Rückrufzeitfenster reichen völlig.</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <h3 style="margin:0 0 8px; font-family:Cinzel,serif;">Anfrage senden</h3>
+            <div class="small">Ohne Server: Formular öffnet eine E-Mail (mailto).</div>
+
+            <form class="form" id="contactForm" style="margin-top:10px;">
+              <div class="row2">
+                <div><label for="name">Name *</label><input id="name" required /></div>
+                <div><label for="email">E-Mail *</label><input id="email" type="email" required /></div>
+              </div>
+
+              <label for="phone">Telefon</label>
+              <input id="phone" />
+
+              <label for="topic">Thema</label>
+              <select id="topic">
+                <option>Verkauf</option>
+                <option>Vermietung</option>
+                <option>Wertermittlung</option>
+                <option>Diskrete Vermarktung</option>
+                <option>Allgemeine Anfrage</option>
+              </select>
+
+              <label for="message">Nachricht *</label>
+              <textarea id="message" required></textarea>
+
+              <div class="small" style="margin-top:10px;">
+                Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß Datenschutzerklärung zu.
+              </div>
+
+              <button class="btn primary" type="submit" style="margin-top:12px;">Nachricht senden</button>
+            </form>
+          </div>
+
+          <div class="card">
+            <h3 style="margin:0 0 8px; font-family:Cinzel,serif;">Direktkontakt</h3>
+
+            <div class="feature" style="margin-top:10px;">
+              <div class="icon">📞</div>
+              <h3>Telefon</h3>
+              <p><a href="tel:+490000000000">+49 000 0000000</a></p>
+            </div>
+
+            <div class="feature" style="margin-top:12px;">
+              <div class="icon">✉</div>
+              <h3>E-Mail</h3>
+              <p><a href="mailto:info@hirschfeld-immobilien.de">info@hirschfeld-immobilien.de</a></p>
+            </div>
+
+            <div class="feature" style="margin-top:12px;">
+              <div class="icon">📍</div>
+              <h3>Region</h3>
+              <p>Musterstadt &amp; Umgebung</p>
+              <p class="small">Adresse optional: Musterstraße 1, 00000 Musterstadt</p>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a class="btn gold" href="tel:+490000000000">Jetzt anrufen</a>
+              <a class="btn" href="mailto:info@hirschfeld-immobilien.de">E-Mail</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footGrid">
+      <div>
+        <img src="assets/logo.png" alt="Hirschfeld Immobilien Logo" style="height:40px;width:auto" />
+        <p style="margin:10px 0 0;">
+          Seriöse Immobilienvermittlung – Verkauf, Vermietung und Wertermittlung in Ihrer Region.
+        </p>
+      </div>
+
+      <div>
+        <b style="color:var(--ink)">Navigation</b>
+        <div style="margin-top:8px; display:grid; gap:6px;">
+          <a href="#leistungen">Leistungen</a>
+          <a href="#prozess">Prozess</a>
+          <a href="#referenzen">Referenzen</a>
+          <a href="#faq">FAQ</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+      </div>
+
+      <div>
+        <b style="color:var(--ink)">Rechtliches</b>
+        <div style="margin-top:8px; display:grid; gap:6px;">
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copy">
+      <div>© <span id="year"></span> Hirschfeld Immobilien. Alle Rechte vorbehalten.</div>
+      <div>#1F3A2E · #C6A65B · #F4EFE6</div>
+    </div>
+  </div>
+</footer>
+
+<div class="float">
+  <a class="btn primary" href="#kontakt">✍️ Anfrage</a>
+</div>
+
+<script>
+  // Mobile menu
+  const nav = document.getElementById("topNav");
+  const btn = document.getElementById("menuBtn");
+  btn?.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  // Mailto form submit
+  document.getElementById("contactForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const v = (id) => document.getElementById(id)?.value?.trim() || "";
+    const name = v("name");
+    const email = v("email");
+    const phone = v("phone");
+    const topic = v("topic");
+    const message = v("message");
+
+    const subject = encodeURIComponent(`Anfrage – ${topic}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\nThema: ${topic}\n\nNachricht:\n${message}`
+    );
+
+    window.location.href = `mailto:info@hirschfeld-immobilien.de?subject=${subject}&body=${body}`;
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
