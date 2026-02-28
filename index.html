@@ -6,23 +6,25 @@
   <title>Hirschfeld Immobilien – Verkauf · Vermietung · Wertermittlung</title>
   <meta name="description" content="Hirschfeld Immobilien: seriöse Immobilienvermittlung. Verkauf, Vermietung, Wertermittlung – diskret, transparent und regional." />
 
-  <!-- Seriöse Schriftkombination (passt zum Logo-Look) -->
+  <!-- Seriöse Typo -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Deine Farbwelt */
-      --green: #1F3A2E;  /* Moosgrün */
-      --gold:  #C6A65B;  /* Gold */
-      --bg:    #F4EFE6;  /* Ivory */
-      --bg2:   #E8E0D2;  /* edleres Beige */
+      /* Deine Farben */
+      --green: #1F3A2E;
+      --gold:  #C6A65B;
 
-      --card:  #ffffff;
-      --ink:   #111827;
-      --muted: #4b5563;
-      --line:  rgba(31,58,46,.16);
+      /* ✅ viel helleres Altweiß */
+      --bg:  #FCFBF7;     /* sehr helles Altweiß */
+      --bg2: #F7F3EA;     /* minimal wärmer für Verlauf */
+
+      --card: #ffffff;
+      --ink:  #111111;    /* „schwarz“ */
+      --muted:#4b5563;
+      --line: rgba(31,58,46,.14);
 
       --shadow: 0 18px 55px rgba(17,24,39,.10);
       --radius: 18px;
@@ -36,8 +38,8 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--ink);
       background:
-        radial-gradient(900px 650px at 10% -10%, rgba(31,58,46,.10), transparent 60%),
-        radial-gradient(900px 650px at 92% 10%, rgba(198,166,91,.14), transparent 55%),
+        radial-gradient(1100px 760px at 10% -10%, rgba(31,58,46,.08), transparent 62%),
+        radial-gradient(1100px 760px at 92% 10%, rgba(198,166,91,.10), transparent 60%),
         linear-gradient(180deg, var(--bg), var(--bg2));
       line-height:1.65;
     }
@@ -48,7 +50,7 @@
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px) saturate(160%);
-      background: rgba(244,239,230,.82);
+      background: rgba(252,251,247,.86);
       border-bottom:1px solid var(--line);
     }
     .nav{
@@ -57,27 +59,24 @@
     }
 
     /* Logo */
-    .brand{
-      display:flex; align-items:center; gap:14px;
-      text-decoration:none;
-      min-width: 320px;
-    }
-    .brand img{
-      height:40px; width:auto; display:block;
-    }
+    .brand{display:flex; align-items:center; gap:14px; text-decoration:none; min-width:320px;}
+    .brand img{height:42px; width:auto; display:block;}
 
     nav ul{list-style:none; margin:0; padding:0; display:flex; gap:6px; align-items:center;}
+
+    /* ✅ Navigation schwarz */
     nav a{
       text-decoration:none;
       padding:10px 12px;
       border-radius:14px;
-      color: rgba(17,24,39,.72);
+      color: var(--ink);
       font-weight:800;
       letter-spacing:.01em;
     }
-    nav a:hover{background: rgba(31,58,46,.10); color:var(--ink);}
+    nav a:hover{background: rgba(31,58,46,.08);}
 
     .actions{display:flex; gap:10px; align-items:center;}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:12px 14px;
@@ -90,10 +89,11 @@
       white-space:nowrap;
     }
     .btn:hover{transform:translateY(-1px)}
+
     .btn.primary{
       border-color: transparent;
       background: linear-gradient(135deg, var(--green), #163026);
-      color: var(--bg);
+      color: #fff;
       position:relative;
     }
     .btn.primary:after{
@@ -102,18 +102,22 @@
       border:1px solid rgba(198,166,91,.70);
       pointer-events:none;
     }
+
+    /* ✅ Telefon-Button GOLD (statt irgendeinem Pink) */
+    .btn.phone,
     .btn.gold{
       background: linear-gradient(135deg, #d1b068, var(--gold));
-      color:#111827;
+      color:#111111;
       border-color: transparent;
     }
+
     .menuBtn{display:none}
 
     /* Hero */
     .hero{padding:54px 0 22px;}
     .heroGrid{
       display:grid;
-      grid-template-columns: 1.08fr .92fr;
+      grid-template-columns: 1.02fr .98fr;
       gap:16px;
       align-items:stretch;
     }
@@ -129,8 +133,8 @@
       padding:8px 12px;
       border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.72);
-      color: rgba(17,24,39,.65);
+      background: rgba(255,255,255,.78);
+      color: rgba(17,17,17,.70);
       font-weight:900;
       font-size:12px;
       letter-spacing:.10em;
@@ -139,11 +143,11 @@
     .dot{
       width:10px;height:10px;border-radius:50%;
       background: linear-gradient(135deg, var(--gold), var(--green));
-      box-shadow: 0 0 0 6px rgba(198,166,91,.16);
+      box-shadow: 0 0 0 6px rgba(198,166,91,.14);
     }
     h1{
       margin:14px 0 10px;
-      font-family: Cinzel, "Times New Roman", serif;
+      font-family: Cinzel, serif;
       font-size: clamp(36px, 4.4vw, 56px);
       line-height:1.04;
       letter-spacing:-.01em;
@@ -156,25 +160,42 @@
       max-width: 75ch;
     }
     .heroCtas{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;}
+
+    /* ✅ Trigger-Box (Verlustaversion + Nutzen + Reziprozität) */
+    .triggerBox{
+      margin-top:16px;
+      border:1px solid rgba(198,166,91,.45);
+      background: rgba(198,166,91,.10);
+      border-radius: 16px;
+      padding:14px 14px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .triggerBox b{display:block; margin-bottom:4px;}
+    .triggerBox p{margin:0; color:rgba(17,17,17,.78); font-weight:650; font-size:14px;}
+
     .micro{
       display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:16px;
-      padding-top:16px;
+      margin-top:14px;
+      padding-top:14px;
       border-top:1px solid var(--line);
-      color: rgba(17,24,39,.62);
+      color: rgba(17,17,17,.70);
       font-weight:700;
       font-size:13px;
     }
     .micro b{color:var(--ink)}
+
+    /* ✅ Größere Bildfläche */
     .heroMedia{
       border-radius: var(--radius);
       border:1px solid var(--line);
       box-shadow: var(--shadow);
       overflow:hidden;
-      min-height: 470px;
+      min-height: 560px; /* größer */
       background:
-        linear-gradient(180deg, rgba(244,239,230,.62), rgba(244,239,230,.92)),
-        url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=75");
+        linear-gradient(180deg, rgba(252,251,247,.45), rgba(252,251,247,.86)),
+        url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=2000&q=80");
       background-size:cover;
       background-position:center;
       display:flex;
@@ -188,15 +209,12 @@
       height:100%;
       justify-content:space-between;
     }
-    .heroMedia h3{
-      margin:0;
-      font-family: Cinzel, serif;
-      font-size:18px;
-    }
+    .heroMedia h3{margin:0; font-family: Cinzel, serif; font-size:18px;}
     .heroMedia p{margin:0; color:var(--muted); font-weight:700}
+
     .miniGrid{display:grid; gap:10px}
     .miniCard{
-      background: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.88);
       border:1px solid var(--line);
       border-radius: 16px;
       padding:14px;
@@ -204,8 +222,8 @@
     .miniCard b{display:block}
     .miniCard span{color:var(--muted); font-weight:700; font-size:13px}
 
-    /* Sections – Premium “Studio”-Aufbau */
-    section{padding:44px 0;}
+    /* Sections */
+    section{padding:46px 0;}
     .sectionGrid{
       display:grid;
       grid-template-columns: .9fr 1.1fr;
@@ -223,7 +241,7 @@
       letter-spacing:.10em;
       text-transform:uppercase;
       font-size:12px;
-      color: rgba(17,24,39,.65);
+      color: rgba(17,17,17,.70);
       margin-bottom:10px;
     }
     .sectionTitle h2{
@@ -233,12 +251,7 @@
       line-height:1.12;
       letter-spacing:-.01em;
     }
-    .sectionTitle p{
-      margin:10px 0 0;
-      color:var(--muted);
-      font-weight:600;
-      max-width:55ch;
-    }
+    .sectionTitle p{margin:10px 0 0; color:var(--muted); font-weight:600; max-width:55ch;}
 
     .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;}
     .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:14px;}
@@ -253,7 +266,7 @@
     .icon{
       width:44px;height:44px;border-radius:16px;
       display:grid;place-items:center;
-      background: rgba(31,58,46,.10);
+      background: rgba(31,58,46,.08);
       border:1px solid rgba(31,58,46,.18);
       font-weight:1000;
       color: var(--green);
@@ -270,6 +283,7 @@
     .feature h3{margin:0 0 6px; font-size:16px}
     .feature p{margin:0; color:var(--muted); font-weight:600}
 
+    /* ✅ größere Bilder in Services */
     .service{
       display:flex; flex-direction:column; gap:10px;
       border:1px solid var(--line);
@@ -278,32 +292,14 @@
       overflow:hidden;
       box-shadow: 0 10px 30px rgba(17,24,39,.06);
     }
-    .service img{width:100%; height:190px; object-fit:cover;}
+    .service img{width:100%; height:240px; object-fit:cover;} /* größer */
     .service .pad{padding:16px}
     .service h3{margin:0 0 6px; font-family: Cinzel, serif;}
     .service p{margin:0; color:var(--muted); font-weight:600}
 
-    .case{
-      border:1px solid var(--line);
-      background: var(--card);
-      border-radius: var(--radius);
-      overflow:hidden;
-      box-shadow: 0 10px 30px rgba(17,24,39,.06);
-      display:flex; flex-direction:column;
-    }
-    .case .img{
-      height:170px;
-      background-size:cover;
-      background-position:center;
-      border-bottom:1px solid var(--line);
-    }
-    .case .pad{padding:16px}
-    .case b{display:block}
-    .case span{color:var(--muted); font-weight:700; font-size:13px}
-
     .ctaBand{
       border:1px solid var(--line);
-      background: linear-gradient(135deg, rgba(31,58,46,.08), rgba(198,166,91,.10));
+      background: linear-gradient(135deg, rgba(31,58,46,.07), rgba(198,166,91,.08));
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding:22px;
@@ -373,7 +369,7 @@
         left:0; right:0;
         top:64px;
         padding:12px;
-        background: rgba(244,239,230,.95);
+        background: rgba(252,251,247,.96);
         border:1px solid var(--line);
         border-radius: 18px;
         gap:6px;
@@ -388,7 +384,6 @@
   <div class="wrap">
     <div class="nav" id="topNav">
       <a class="brand" href="#top" aria-label="Start">
-        <!-- ✅ Hier wird dein hochgeladenes Logo genutzt -->
         <img src="assets/logo.png" alt="Hirschfeld Immobilien Logo" />
       </a>
 
@@ -403,9 +398,9 @@
       </nav>
 
       <div class="actions">
-        <!-- ✅ HIER TELEFON EINTRAGEN -->
-        <a class="btn" href="tel:+490000000000">📞 Anrufen</a>
-        <a class="btn primary" href="#kontakt">Bewertung anfragen</a>
+        <!-- ✅ Telefonbutton gold -->
+        <a class="btn phone" href="tel:+490000000000">📞 Sofort anrufen</a>
+        <a class="btn primary" href="#kontakt">Kostenlose Bewertung</a>
         <button class="btn menuBtn" id="menuBtn" type="button" aria-expanded="false">☰ Menü</button>
       </div>
     </div>
@@ -419,41 +414,52 @@
       <div class="heroGrid">
         <div class="card">
           <div class="kicker"><span class="dot"></span> SERIÖS · DISKRET · REGIONAL</div>
-          <h1>Immobilien verkaufen oder vermieten –<br>professionell &amp; transparent.</h1>
+          <h1>Mehr Erlös. Weniger Stress.<br>Immobilienverkauf mit System.</h1>
           <p class="lead">
             Hirschfeld Immobilien begleitet Eigentümer von der marktnahen Wertermittlung über die Vermarktung bis zum Abschluss –
             mit klarer Kommunikation, hochwertiger Präsentation und strukturierter Abwicklung.
           </p>
 
+          <!-- ✅ Trigger: Reiz zum Anrufen (Nutzen + Verlustaversion + Reziprozität + Risikoumkehr) -->
+          <div class="triggerBox">
+            <div class="icon" style="margin:0;">€</div>
+            <div>
+              <b>Kostenloser „Preis-Check“ am Telefon (10 Min.)</b>
+              <p>
+                Viele Eigentümer verschenken Geld durch einen falschen Startpreis oder schwache Unterlagen.
+                Rufen Sie kurz an – unverbindlich – und bekommen sofort eine klare Einschätzung.
+              </p>
+            </div>
+          </div>
+
           <div class="heroCtas">
-            <a class="btn primary" href="#kontakt">Kostenlose Erstberatung</a>
-            <a class="btn gold" href="#leistungen">Leistungen ansehen</a>
+            <a class="btn phone" href="tel:+490000000000">📞 Jetzt anrufen</a>
+            <a class="btn primary" href="#kontakt">Bewertung anfordern</a>
           </div>
 
           <div class="micro">
-            <span>✔ <b>Marktanalyse</b> statt Bauchgefühl</span>
-            <span>✔ <b>Bonitätsprüfung</b> & qualifizierte Interessenten</span>
-            <span>✔ <b>Rechtssicher</b> bis Übergabe</span>
+            <span>✔ <b>Nur qualifizierte</b> Interessenten</span>
+            <span>✔ <b>Diskret möglich</b> (Off-Market)</span>
+            <span>✔ <b>Transparente Updates</b> jede Woche</span>
           </div>
         </div>
 
         <div class="heroMedia" aria-label="Immobilien Bild">
           <div class="heroMediaInner">
             <div>
-              <div class="kicker"><span class="dot"></span> PREMIUM-VERMARKTUNG</div>
-              <h3 style="margin-top:10px;">Wert erhalten. Sicher abschließen.</h3>
-              <p>Auf Wunsch diskret (Off-Market) oder öffentlich mit starker Sichtbarkeit.</p>
+              <div class="kicker"><span class="dot"></span> PREMIUM-PRÄSENTATION</div>
+              <h3 style="margin-top:10px;">Bessere Wahrnehmung = bessere Ergebnisse.</h3>
+              <p>Große Bilder, saubere Exposés, klare Strategie – damit Ihre Immobilie heraussticht.</p>
             </div>
 
             <div class="miniGrid">
               <div class="miniCard"><b>Antwort in 24h</b><span>werktags auf Anfragen</span></div>
-              <div class="miniCard"><b>Diskrete Vermarktung</b><span>für sensible Verkäufe</span></div>
-              <div class="miniCard"><b>Transparente Schritte</b><span>Sie wissen immer, wo wir stehen</span></div>
+              <div class="miniCard"><b>Bonitätsprüfung</b><span>nur passende Käufer/Mieter</span></div>
+              <div class="miniCard"><b>Risikofrei</b><span>Erstgespräch unverbindlich</span></div>
             </div>
 
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn primary" href="#kontakt">Termin sichern</a>
-              <!-- ✅ HIER EMAIL EINTRAGEN -->
+              <a class="btn phone" href="tel:+490000000000">📞 Direkt anrufen</a>
               <a class="btn" href="mailto:info@hirschfeld-immobilien.de">E-Mail</a>
             </div>
           </div>
@@ -467,50 +473,56 @@
       <div class="sectionGrid">
         <div class="sectionTitle">
           <div class="tag">Leistungen</div>
-          <h2>Alles aus einer Hand –<br>klar, sauber, seriös.</h2>
-          <p>Verkauf, Vermietung und Wertermittlung – mit hochwertiger Präsentation und sauberer Abwicklung.</p>
+          <h2>Vermarktung, die Käufer überzeugt.</h2>
+          <p>
+            Ziel: Mehr Vertrauen bei Interessenten → bessere Gespräche → bessere Verhandlung.
+            Und für Sie: weniger Besichtigungstourismus.
+          </p>
         </div>
 
         <div style="display:grid; gap:14px;">
           <div class="grid3">
             <div class="service">
-              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=75" alt="Immobilienverkauf" />
+              <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=2000&q=80" alt="Immobilienverkauf" />
               <div class="pad">
                 <h3>Verkauf</h3>
-                <p>Preisstrategie, Exposé, Zielgruppenansprache, Besichtigungen, Verhandlung & Abschluss.</p>
+                <p>Preisstrategie, Exposé, Zielgruppe, Besichtigungen, Verhandlung & Abschluss.</p>
               </div>
             </div>
+
             <div class="service">
-              <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=75" alt="Vermietung" />
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=2000&q=80" alt="Vermietung" />
               <div class="pad">
                 <h3>Vermietung</h3>
-                <p>Bonitätsprüfung, Mieterauswahl, Mietvertrag, Übergabe – strukturiert & rechtssicher.</p>
+                <p>Bonitätsprüfung, Mieterauswahl, Vertrag, Übergabe – strukturiert & sicher.</p>
               </div>
             </div>
+
             <div class="service">
-              <img src="https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?auto=format&fit=crop&w=1600&q=75" alt="Wertermittlung" />
+              <img src="https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?auto=format&fit=crop&w=2000&q=80" alt="Wertermittlung" />
               <div class="pad">
                 <h3>Wertermittlung</h3>
-                <p>Marktanalyse, Objektbewertung, Chancen & Risiken – nachvollziehbar dokumentiert.</p>
+                <p>Marktanalyse & klare Preisempfehlung – nachvollziehbar dokumentiert.</p>
               </div>
             </div>
           </div>
 
           <div class="grid3">
-            <div class="feature"><div class="icon">📸</div><h3>Präsentation</h3><p>Professionelle Fotos, Exposé, Portale, Besichtigungsplanung.</p></div>
-            <div class="feature"><div class="icon">🧾</div><h3>Unterlagen-Check</h3><p>Strukturiert, vollständig, schnell – damit Interessenten entscheiden können.</p></div>
-            <div class="feature"><div class="icon">🤝</div><h3>Verhandlung</h3><p>Seriös, sachlich, zielorientiert – mit klaren Entscheidungsvorlagen.</p></div>
+            <div class="feature"><div class="icon">📸</div><h3>Exposé & Bilder</h3><p>Professionelle Präsentation, die Vertrauen schafft.</p></div>
+            <div class="feature"><div class="icon">🧾</div><h3>Unterlagen</h3><p>Dokumenten-Check – schneller zur Entscheidung.</p></div>
+            <div class="feature"><div class="icon">🎯</div><h3>Zielgruppe</h3><p>Richtige Käufer/Mieter – weniger Zeitverschwendung.</p></div>
           </div>
 
+          <!-- ✅ Knappheit/Terminlimit (fair formuliert) -->
           <div class="ctaBand">
             <div>
-              <div class="kicker"><span class="dot"></span> Kostenfreie Ersteinschätzung</div>
-              <h3 style="margin:10px 0 0; font-family:Cinzel,serif;">In 15 Minuten Klarheit: Verkauf oder Vermietung?</h3>
-              <div class="small">Telefon: +49 000 0000000 · E-Mail: info@hirschfeld-immobilien.de</div>
+              <div class="kicker"><span class="dot"></span> Diese Woche: 5 kostenlose Preis-Checks</div>
+              <h3 style="margin:10px 0 0; font-family:Cinzel,serif;">Sichern Sie sich einen kurzen Telefontermin.</h3>
+              <div class="small">Dauer 10 Minuten · unverbindlich · sofortiger Nutzen</div>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn primary" href="#kontakt">Jetzt anfragen</a>
-              <a class="btn gold" href="tel:+490000000000">Anrufen</a>
+              <a class="btn phone" href="tel:+490000000000">📞 Preis-Check sichern</a>
+              <a class="btn primary" href="#kontakt">Rückruf anfordern</a>
             </div>
           </div>
 
@@ -524,16 +536,16 @@
       <div class="sectionGrid">
         <div class="sectionTitle">
           <div class="tag">Prozess</div>
-          <h2>Ein klarer Ablauf –<br>damit es stressfrei läuft.</h2>
-          <p>Transparente Schritte, klare Zuständigkeiten, regelmäßige Updates.</p>
+          <h2>Transparenz statt Bauchgefühl.</h2>
+          <p>Sie wissen jederzeit, was passiert – mit klaren Schritten und regelmäßigen Updates.</p>
         </div>
 
         <div class="grid3">
           <div class="feature"><div class="icon">1</div><h3>Erstgespräch</h3><p>Ziele, Objekt, Zeitrahmen – unverbindlich.</p></div>
-          <div class="feature"><div class="icon">2</div><h3>Strategie</h3><p>Bewertung, Zielgruppe, Vermarktungsweg (auch diskret möglich).</p></div>
-          <div class="feature"><div class="icon">3</div><h3>Vermarktung</h3><p>Exposé, Portale/Netzwerk, Besichtigungen, Interessentenmanagement.</p></div>
-          <div class="feature"><div class="icon">4</div><h3>Prüfung</h3><p>Bonität/Finanzierung, Dokumente, Auswahl qualifizierter Kandidaten.</p></div>
-          <div class="feature"><div class="icon">5</div><h3>Abschluss</h3><p>Verhandlung, Vertrag/Notar, Übergabeprotokoll.</p></div>
+          <div class="feature"><div class="icon">2</div><h3>Strategie</h3><p>Preis & Vermarktungsweg (öffentlich oder diskret).</p></div>
+          <div class="feature"><div class="icon">3</div><h3>Vermarktung</h3><p>Exposé, Portale/Netzwerk, Besichtigungen.</p></div>
+          <div class="feature"><div class="icon">4</div><h3>Qualifizierung</h3><p>Bonität/Finanzierung, Dokumente, Auswahl.</p></div>
+          <div class="feature"><div class="icon">5</div><h3>Abschluss</h3><p>Verhandlung, Vertrag/Notar, Übergabe.</p></div>
           <div class="feature"><div class="icon">✓</div><h3>Nachbetreuung</h3><p>Offene Punkte klären, sauberer Abschluss.</p></div>
         </div>
       </div>
@@ -545,22 +557,25 @@
       <div class="sectionGrid">
         <div class="sectionTitle">
           <div class="tag">Referenzen</div>
-          <h2>Ausgewählte Fälle</h2>
-          <p>Hier später echte Objekte/Projekte eintragen (mit echten Bildern).</p>
+          <h2>Ergebnisse, die beruhigen.</h2>
+          <p>Hier kannst du später echte Projekte/Bewertungen eintragen (Google etc.).</p>
         </div>
 
         <div class="grid3">
-          <div class="case">
-            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=75');"></div>
-            <div class="pad"><b>Verkauf Einfamilienhaus</b><span>Preisstrategie · Exposé · Abschluss</span></div>
+          <div class="feature">
+            <div class="icon">★</div>
+            <h3>Seriöses Auftreten</h3>
+            <p>Professionelle Kommunikation steigert Vertrauen und Abschlussquote.</p>
           </div>
-          <div class="case">
-            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=75');"></div>
-            <div class="pad"><b>Vermietung Wohnung</b><span>Bonität · Vertrag · Übergabe</span></div>
+          <div class="feature">
+            <div class="icon">⏱</div>
+            <h3>Weniger Leerlauf</h3>
+            <p>Qualifizierte Interessenten statt „nur mal gucken“.</p>
           </div>
-          <div class="case">
-            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1600&q=75');"></div>
-            <div class="pad"><b>Wertermittlung</b><span>Marktanalyse · Empfehlung</span></div>
+          <div class="feature">
+            <div class="icon">€</div>
+            <h3>Bessere Verhandlung</h3>
+            <p>Mit klarer Preisstrategie und starken Unterlagen.</p>
           </div>
         </div>
 
@@ -571,8 +586,8 @@
             <div class="small">Ideal bei sensiblen Verkäufen – ohne breite Veröffentlichung.</div>
           </div>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn primary" href="#kontakt">Diskret anfragen</a>
-            <a class="btn gold" href="#leistungen">Leistungen</a>
+            <a class="btn phone" href="tel:+490000000000">📞 Diskret anrufen</a>
+            <a class="btn primary" href="#kontakt">Rückruf anfordern</a>
           </div>
         </div>
 
@@ -590,10 +605,10 @@
         </div>
 
         <div class="grid2">
-          <details><summary>Was kostet ein Makler?</summary><p>Hängt von Objekt, Leistungspaket und Region ab. Wir klären das transparent in der Erstberatung.</p></details>
-          <details><summary>Wie schnell kann verkauft/vermietet werden?</summary><p>Abhängig von Lage, Preis und Zustand. Professionelle Präsentation verkürzt oft die Vermarktungszeit.</p></details>
-          <details><summary>Kann die Vermarktung diskret erfolgen?</summary><p>Ja – auf Wunsch Off-Market über Netzwerk.</p></details>
-          <details><summary>Welche Unterlagen werden benötigt?</summary><p>Typisch: Grundbuch, Energieausweis, Grundrisse, Wohnflächen, WEG-Unterlagen. Wir helfen beim Zusammenstellen.</p></details>
+          <details><summary>Was kostet ein Makler?</summary><p>Abhängig von Objekt, Leistungspaket und Region. In der Erstberatung klären wir das transparent.</p></details>
+          <details><summary>Wie schnell kann verkauft/vermietet werden?</summary><p>Das hängt von Lage, Preis und Zustand ab. Professionelle Präsentation verkürzt häufig die Vermarktungszeit.</p></details>
+          <details><summary>Kann die Vermarktung diskret erfolgen?</summary><p>Ja – auf Wunsch Off-Market über unser Netzwerk.</p></details>
+          <details><summary>Welche Unterlagen werden benötigt?</summary><p>Grundbuch, Energieausweis, Grundrisse, Wohnflächen, ggf. WEG-Unterlagen. Wir helfen beim Zusammenstellen.</p></details>
         </div>
       </div>
     </div>
@@ -604,13 +619,15 @@
       <div class="sectionGrid">
         <div class="sectionTitle">
           <div class="tag">Kontakt</div>
-          <h2>Wir melden uns schnell zurück.</h2>
-          <p>Objektart, Ort, grobe Eckdaten und Rückrufzeitfenster reichen völlig.</p>
+          <h2>Rufen Sie kurz an – das lohnt sich.</h2>
+          <p>
+            10 Minuten genügen für eine erste Einschätzung. Wenn es passt, gehen wir die nächsten Schritte gemeinsam.
+          </p>
         </div>
 
         <div class="grid2">
           <div class="card">
-            <h3 style="margin:0 0 8px; font-family:Cinzel,serif;">Anfrage senden</h3>
+            <h3 style="margin:0 0 8px; font-family:Cinzel,serif;">Rückruf anfordern</h3>
             <div class="small">Ohne Server: Formular öffnet eine E-Mail (mailto).</div>
 
             <form class="form" id="contactForm" style="margin-top:10px;">
@@ -631,14 +648,16 @@
                 <option>Allgemeine Anfrage</option>
               </select>
 
-              <label for="message">Nachricht *</label>
-              <textarea id="message" required></textarea>
+              <label for="message">Kurzinfo *</label>
+              <textarea id="message" required placeholder="Objektart, Ort, grobe Eckdaten, wann wir Sie erreichen."></textarea>
 
               <div class="small" style="margin-top:10px;">
                 Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß Datenschutzerklärung zu.
               </div>
 
-              <button class="btn primary" type="submit" style="margin-top:12px;">Nachricht senden</button>
+              <button class="btn primary" type="submit" style="margin-top:12px;">E-Mail öffnen</button>
+              <div class="sep"></div>
+              <a class="btn phone" href="tel:+490000000000">📞 Oder direkt anrufen</a>
             </form>
           </div>
 
@@ -664,10 +683,14 @@
               <p class="small">Adresse optional: Musterstraße 1, 00000 Musterstadt</p>
             </div>
 
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
-              <a class="btn gold" href="tel:+490000000000">Jetzt anrufen</a>
-              <a class="btn" href="mailto:info@hirschfeld-immobilien.de">E-Mail</a>
+            <div class="ctaBand" style="margin-top:14px;">
+              <div>
+                <div class="kicker"><span class="dot"></span> Schnellster Weg</div>
+                <div class="small">Ein kurzer Anruf spart oft Wochen an Unsicherheit.</div>
+              </div>
+              <a class="btn phone" href="tel:+490000000000">📞 Jetzt anrufen</a>
             </div>
+
           </div>
         </div>
 
@@ -681,9 +704,9 @@
   <div class="wrap">
     <div class="footGrid">
       <div>
-        <img src="assets/logo.png" alt="Hirschfeld Immobilien Logo" style="height:40px;width:auto" />
+        <img src="assets/logo.png" alt="Hirschfeld Immobilien Logo" style="height:42px;width:auto" />
         <p style="margin:10px 0 0;">
-          Seriöse Immobilienvermittlung – Verkauf, Vermietung und Wertermittlung in Ihrer Region.
+          Seriöse Immobilienvermittlung – Verkauf, Vermietung und Wertermittlung.
         </p>
       </div>
 
@@ -709,13 +732,14 @@
 
     <div class="copy">
       <div>© <span id="year"></span> Hirschfeld Immobilien. Alle Rechte vorbehalten.</div>
-      <div>#1F3A2E · #C6A65B · #F4EFE6</div>
+      <div>#1F3A2E · #C6A65B · #FCFBF7</div>
     </div>
   </div>
 </footer>
 
 <div class="float">
-  <a class="btn primary" href="#kontakt">✍️ Anfrage</a>
+  <a class="btn phone" href="tel:+490000000000">📞 Anrufen</a>
+  <a class="btn primary" href="#kontakt">Rückruf</a>
 </div>
 
 <script>
@@ -739,7 +763,7 @@
 
     const subject = encodeURIComponent(`Anfrage – ${topic}`);
     const body = encodeURIComponent(
-      `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\nThema: ${topic}\n\nNachricht:\n${message}`
+      `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\nThema: ${topic}\n\nInfos:\n${message}`
     );
 
     window.location.href = `mailto:info@hirschfeld-immobilien.de?subject=${subject}&body=${body}`;
